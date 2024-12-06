@@ -1,0 +1,46 @@
+================<< Computer & Phone shop >>==================
+
+- User 
+- User Role In System 
+- User permission Module in System
+- Employee
+- Employee Payroll
+- Customer
+- Customer Address 
+- Customer Member
+- Category
+- Product 
+- Product Image
+- Product Discription
+- Product Discount 
+- Purchase
+- Purchase Item
+- Supplier
+- Stock 
+- Sale 
+- Order 
+- Oder Item
+- Customer Order
+- Customer Payment 
+- Expenses
+- Expenses Type 
+- More Option 
+            - Online Order 
+            - Deliver
+            - Delivery Router 
+            - Delivery Product
+.........
+
+- Report 
+            - Sale By Customer
+            - sale By Category
+            - Top sale
+            - Sale By Days/Months/Year 
+                    -Today, Yesterday, Last 70Days, This Months, Last Months
+                    - Or Filter By Oeriod
+            - Sale bby User
+            - Payroll By Months 
+            - Payroll By Employee
+            - Purchase Report
+            - Stock ......
+            -Export PDF and EXCEL files

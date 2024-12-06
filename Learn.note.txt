@@ -1,0 +1,38 @@
+- Day 1 :  Setup First Project:  >>====Computer and Phone POS ====<<
+                - V1.create reactjs project:
+                - V2.node create project
+                - V3.propject information
+- Day 2 :  V4.react plugin some library
+                - React Router-DOM installed 
+                - antd Design UI components ...
+                - React-icon
+                - axios
+- Day 3 :  V5.react configure route => [23 November, 2024]
+                - configure route 
+                - Outlet : Fuction use for create a MainLayout use for all  Page or Create  Muilty MainLayout use for Part of pages. 
+                - created MainLayout, MainLayoutAuth
+                V6.react pluing Master Layout
+                V7.React Link pages and Design Header (8:00 time)
+                - Desing MainLayout
+                - How to Use TailtwinCSS and React-Boostrap......optional
+
+- Day 4:  V8 React with API
+                - install cors 
+                - 
+- Day 5: V9, V10, V11
+                - Install mySQL2 
+                - Create connection to Database
+                - Create Function Error log and Run test when has error Syntsx OR Qurey .... Message Error has Make in logs Folder.
+                V12: Plugin nodemon => use for restart server when file changed code running.
+                V13: React List Data from API.
+                        CRUD :
+                                   - create category table in MySQL Database Server.
+                                       [id,name, descript, parent_id, status]
+                                   - Build getList, create, update, delete
+                                   - using in ReactJS
+- Day 7: V16 
+                - Category CRUD with form
+                
+-Day 8: V17=> User Design Table part1  
+-Day 9: V18=> User api register, login pert2
+            V19=> JWT      

@@ -1,0 +1,8 @@
+ command on derictry project
+        >npm create vite@latest
+           - choose project name
+           - Choose framework react
+           - javascript
+        >cd web-pos
+        >npm install
+        >npm run dev
