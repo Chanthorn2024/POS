@@ -35,4 +35,4 @@
                 
 -Day 8: V17=> User Design Table part1  
 -Day 9: V18=> User api register, login pert2
-            V19=> JWT      
+-Day 10: V19=> JWT (npm i jsonwebtoken)      

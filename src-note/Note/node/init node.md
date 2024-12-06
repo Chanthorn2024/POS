@@ -8,4 +8,6 @@
 
 >npm install --save-dev nodemon    ==> [Add  "dev": "nodemon index.js" in script on file package.json ]
 >npm install    {bcrypt}
->npm install    {JWT}
+
+  // New notyet commit
+>npm i jsonwebtoken   {JWT}

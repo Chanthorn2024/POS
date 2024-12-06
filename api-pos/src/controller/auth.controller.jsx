@@ -1,5 +1,7 @@
 const { logError, db } = require("../utils/Helper.jsx");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+// const config = require("../utils/config.jsx");
 
 // Register
 exports.register = async (req, res) =>{
@@ -67,6 +69,7 @@ exports.login = async (req, res) =>{
                         // data : data,
                         message: "Login Success  !!!",
                         profile : data[0],
+                        access_token: await getAccessToken(),
                     })
                 }
         }
@@ -78,11 +81,61 @@ exports.login = async (req, res) =>{
 }
 
 // Profile
-exports.profile = (req, res) =>{
+exports.profile = async (req, res) =>{
     try{
-        
+        const data = await db.query("SELECT * FROM user WHERE id = :id", {
+            id : req.body.id
+        })
+        res.json({
+            profile : data.length >0 ? data[0] : null,
+        })
     }catch(error){
-        logError("auth.register", error, res);
+        logError("auth.Profile", error, res);
     }
 }
 
+
+const getAccessToken = async () =>{
+    const keyToken = "LGDuwruiwoiJ97@#@$(#@(8";
+    const data = {
+        id : 1,
+        name : "Phanha",
+    };
+    const access_token = await jwt.sign(
+         {data: data },
+         keyToken,
+         {expiresIn: "180s"});
+    return access_token;
+};
+
+exports.validate_token = () => {
+    //
+    return (req, res, next) => {
+        var authorization = req.headers.authorization; // token from client
+        var token_from_client = null;
+        if(authorization != null && authorization != "" ){
+           token_from_client = authorization.split(" "); //
+           token_from_client = token_from_client[1]; //
+        }
+        if(token_from_client == null) {
+            res.status(401).send({
+                message: "Unauthorized",
+            });
+        }else{
+            const keyToken = "LGDuwruiwoiJ97@#@$(#@(8";
+            jwt.verify(token_from_client, keyToken, (error, result)=> {
+                if(error) {
+                    res.status(401).send({
+                        message: "Unauthorized",
+                        error : error,
+                    });
+                }else{
+                    // req.user = result.data; //
+                    // req.user_id = result.data.Id; //
+                    req.current_id = result.data.id; // write user property
+                    next(); // continue controller
+                }
+            })
+        }
+    }
+}
